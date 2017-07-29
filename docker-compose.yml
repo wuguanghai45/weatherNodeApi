@@ -4,6 +4,6 @@ services:
   main:
     build: .
     volumes:
-      - "./app:/src/app"
+      - "./app:/src"
     ports:
       - "3030:4000"

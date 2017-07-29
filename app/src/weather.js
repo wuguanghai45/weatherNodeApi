@@ -45,16 +45,14 @@ function townWather(url, callback) {
   📅  ${future[0].date} ${future[0].day} \n
 
   🐚  ${da.weather[0].city_name}:${weatherSign[da.weather[0].now.text] || "🔆"} \n
-
-  🌅: ${today.sunrise}    🌄: ${today.sunset} \n
+  🌅: ${today.sunrise}  🌄: ${today.sunset} \n
 
   pm2.5:${now.air_quality.city.pm25} \n
   空气质量:${now.air_quality.city.quality} \n
   空气质量指数:${now.air_quality.city.aqi} \n
 
   🌡:  ${now.temperature}°C    🍃  :${future[0].wind} \n
-
-  最近更新时间： ${last_update}
+  ${last_update}
       `
     callback(string);
     return string;

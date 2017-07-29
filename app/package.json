@@ -1,8 +1,12 @@
 {
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "dependencies": {
     "cli-table2": "^0.2.0",
     "express": "^4.15.3",
     "http": "^0.0.0",
-    "iconv-lite": "^0.4.18"
+    "iconv-lite": "^0.4.18",
+    "nodemon": "^1.11.0"
   }
 }

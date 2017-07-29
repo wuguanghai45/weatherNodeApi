@@ -3,7 +3,7 @@ const app = express()
 const weather = require("./src/weather");
 
 app.get('/', function (req, res) {
-  weather("温州", (string)=> {
+  weather(req.param('cityname'), (string)=> {
     res.setHeader('Content-Type', 'text/plain');
     res.send(string);
   })
