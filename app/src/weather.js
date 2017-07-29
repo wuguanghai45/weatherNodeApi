@@ -54,7 +54,7 @@ function townWather(url, callback) {
 
   🌡:  ${now.temperature}°C    🍃  :${future[0].wind} \n
 
-  最近更新时间： ${last_update} \n
+  最近更新时间： ${last_update}
       `
     callback(string);
     return string;
