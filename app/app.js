@@ -19,8 +19,8 @@ app.get('/', function (req, res) {
 })
 
 https.createServer({
-  key: fs.readFileSync('privatekey.pem'),
-  cert: fs.readFileSync('certificate.pem')
+  key: fs.readFileSync('2_beifengchuihan.vip.key'),
+  cert: fs.readFileSync('1_beifengchuihan.vip_bundle.crt')
 }, app).listen(process.env.HTTPS_PORT || 5000, function () {
   console.log(`Example app listening on port ${process.env.PORT || 5000}`)
 })
