@@ -3,10 +3,14 @@ const app = express()
 const weather = require("./src/weather");
 
 app.get('/', function (req, res) {
-  weather(req.param('cityname'), (string)=> {
-    res.setHeader('Content-Type', 'text/plain');
-    res.send(string);
-  })
+  if (!req.query['cityname']) {
+    res.send("");
+  } else {
+    weather(req.query['cityname'], (string)=> {
+      res.setHeader('Content-Type', 'text/plain');
+      res.send(string);
+    })
+  }
 })
 
 app.listen(process.env.PORT || 4000, function () {

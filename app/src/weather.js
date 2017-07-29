@@ -6,10 +6,16 @@ var weatherSign = require("./weatherSign");
 
 // weather(sName)
 module.exports =function weather(sName, callBack) {
+  let isFindCity = false;
   for (let i = 0; i < citycode.length; ++i) {
     if (citycode[i].townName === sName) {
       townWather(`http://tj.nineton.cn/Heart/index/all?city=${citycode[i].townID}&language=zh-chs&unit=c&aqi=city&alarm=1&key=78928e706123c1a8f1766f062bc8676b`, callBack)
+      isFindCity = true;
     }
+  }
+
+  if (!isFindCity) {
+    callBack("");
   }
 }
 
