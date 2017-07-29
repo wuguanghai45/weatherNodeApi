@@ -4,7 +4,8 @@ RUN mkdir /src
 
 WORKDIR /src
 ADD app/package.json /src/package.json
-RUN npm install --registry=https://registry.npm.taobao.org
+RUN cd /src && npm install --registry=https://registry.npm.taobao.org
+RUN npm clean
 
 EXPOSE 4000
 
