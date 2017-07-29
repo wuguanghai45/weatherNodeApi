@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const weather = require("./src/weather");
+const https = require("https");
+const fs = require("fs");
 
 app.get('/', function (req, res) {
   if (!req.query['cityname']) {
@@ -14,6 +16,13 @@ app.get('/', function (req, res) {
       res.send(string);
     })
   }
+})
+
+https.createServer({
+  key: fs.readFileSync('privatekey.pem'),
+  cert: fs.readFileSync('certificate.pem')
+}, app).listen(process.env.HTTPS_PORT || 5000, function () {
+  console.log(`Example app listening on port ${process.env.PORT || 5000}`)
 })
 
 app.listen(process.env.PORT || 4000, function () {

@@ -8,3 +8,4 @@ services:
       - "/src/node_modules"
     ports:
       - "3030:4000"
+      - "3031:5000"
