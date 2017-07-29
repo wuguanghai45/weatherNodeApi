@@ -45,19 +45,18 @@ function townWather(url, callback) {
     let today  = da.weather[0].today
     let now = da.weather[0].now
     let future =da.weather[0].future
-    let last_update =da.weather[0].last_update.toLocaleString().replace(/T/,' ⏲  ').replace("+08:00","").replace(/^/,"🔠  ");
+    let last_update =da.weather[0].last_update.toLocaleString().replace(/T/,' ').replace("+08:00","").replace(/^/,"⏲ ").replace(/:00$/, "");
 
     let string = `
-  📅  ${future[0].date} ${future[0].day} \n
-
-  🐚  ${da.weather[0].city_name}:${weatherSign[da.weather[0].now.text] || "🔆"} \n
-  🌅: ${today.sunrise}  🌄: ${today.sunset} \n
-
-  pm2.5:${now.air_quality.city.pm25} \n
-  空气质量:${now.air_quality.city.quality} \n
-  空气质量指数:${now.air_quality.city.aqi} \n
-
-  🌡:  ${now.temperature}°C    🍃  :${future[0].wind} \n
+  📅  ${future[0].date} ${future[0].day}
+  🐚  ${da.weather[0].city_name}: ${weatherSign[da.weather[0].now.text] || "🔆"}
+  🌅 ${today.sunrise}
+  🌄 ${today.sunset}
+  pm2.5: ${now.air_quality.city.pm25}
+  空气质量: ${now.air_quality.city.quality}
+  空气质量指数: ${now.air_quality.city.aqi}
+  🌡  ${now.temperature}°C
+  🍃  ${future[0].wind}
   ${last_update}
       `
     callback(string);
