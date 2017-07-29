@@ -1,5 +1,6 @@
 用来抓取中央气象台天气的API服务。用来给博客添加天气预报使用
-抓取气象的源码来自 https://github.com/bubao/nodc
+抓取气象的源码来自
+https://github.com/bubao/nodc
 
 使用方式有node环境的可以用
 ```
